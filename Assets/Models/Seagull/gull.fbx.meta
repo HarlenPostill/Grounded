@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 31820c32f31924162a794c2a40ebf12c
+guid: b13f8064d889b44ae8c1840528ea86a7
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: GullMat
-    second: {fileID: 2100000, guid: a97e2eaefcb9b486c9fb9a9f16e34db5, type: 2}
+      name: lambert5SG
+    second: {fileID: 2100000, guid: a93e8b0f9cba247e59374db458412ff1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
