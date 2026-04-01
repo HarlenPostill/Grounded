@@ -155,11 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef49efb7f7c7a4a6f9d2e154de56ba14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindRibbon
-  loopAmplitudeY: 1.2
+  loopAmplitudeY: 0.5
   loopAmplitudeZ: 0.4
-  loopFrequencyY: 1.1
-  loopFrequencyZ: 0.7
-  lifetime: 4
-  shrinkDuration: 0.6
+  loopFrequencyY: 0.9
+  loopFrequencyZ: 1
+  lifetime: 1.5
+  shrinkDuration: 1.5
   startWidth: 0.18
   endWidth: 0.04
