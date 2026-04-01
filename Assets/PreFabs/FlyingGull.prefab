@@ -196,10 +196,10 @@ MonoBehaviour:
   rightWingBone: {fileID: 8478609948793864323}
   rightElbowBone: {fileID: 8811263509470565673}
   rightTipBone: {fileID: 7020036760232234602}
-  flapSpeed: 1
+  flapSpeed: 1.4
   wingFlapRange: 20
-  elbowFoldAngle: 20
-  tipLagAngle: 20
+  elbowFoldAngle: 30
+  tipLagAngle: 40
   soaring: 0
   soarDriftAngle: 2
   soarDriftSpeed: 0.4
