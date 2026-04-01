@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d18102e1e23a044e1b8e631d19dd2489, type: 2}
   m_HaloStrength: 0.818
   m_FlareStrength: 0.345
   m_FlareFadeSpeed: 3
@@ -3131,7 +3131,7 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.36209506, g: 0.6492269, b: 0.9716981, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -3154,7 +3154,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 15000
+  far clip plane: 30000
   field of view: 50
   orthographic: 0
   orthographic size: 5
@@ -17578,6 +17578,30 @@ PrefabInstance:
     - target: {fileID: 7173278495711959355, guid: c52f400f2441f4fefbabd674a9aa1987, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863806264756685647, guid: c52f400f2441f4fefbabd674a9aa1987, type: 3}
+      propertyPath: lifetime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863806264756685647, guid: c52f400f2441f4fefbabd674a9aa1987, type: 3}
+      propertyPath: startWidth
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863806264756685647, guid: c52f400f2441f4fefbabd674a9aa1987, type: 3}
+      propertyPath: loopAmplitudeY
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863806264756685647, guid: c52f400f2441f4fefbabd674a9aa1987, type: 3}
+      propertyPath: loopFrequencyY
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863806264756685647, guid: c52f400f2441f4fefbabd674a9aa1987, type: 3}
+      propertyPath: loopFrequencyZ
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863806264756685647, guid: c52f400f2441f4fefbabd674a9aa1987, type: 3}
+      propertyPath: shrinkDuration
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

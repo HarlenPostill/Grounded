@@ -63,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 31820c32f31924162a794c2a40ebf12c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6038507468893375952}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 31820c32f31924162a794c2a40ebf12c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7690528288660643138}
   m_SourcePrefab: {fileID: 100100000, guid: 31820c32f31924162a794c2a40ebf12c, type: 3}
 --- !u!1 &7580929176849455114 stripped
 GameObject:
@@ -118,3 +121,20 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-7690528288660643138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7580929176849455114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9766f66ec59b4436afe58cb2a3804a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GullJump
+  hopHeight: 3
+  hopDuration: 0.3
+  turnAngle: 45
+  minWaitTime: 0.5
+  maxWaitTime: 3.5
