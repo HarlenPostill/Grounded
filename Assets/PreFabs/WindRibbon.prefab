@@ -83,7 +83,7 @@ TrailRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Time: 5
-  m_PreviewTimeScale: 0
+  m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -160,5 +160,6 @@ MonoBehaviour:
   loopFrequencyY: 1.1
   loopFrequencyZ: 0.7
   lifetime: 4
+  shrinkDuration: 0.6
   startWidth: 0.18
   endWidth: 0.04
