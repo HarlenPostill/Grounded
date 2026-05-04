@@ -53,8 +53,8 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _WobbleX: 0.12686536
-    - _WobbleZ: -0.048900023
+    - _WobbleX: 1.2161297e-12
+    - _WobbleZ: 1.477177e-10
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
