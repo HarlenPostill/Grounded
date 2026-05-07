@@ -4696,6 +4696,7 @@ GameObject:
   - component: {fileID: 240623016}
   - component: {fileID: 240623015}
   - component: {fileID: 240623014}
+  - component: {fileID: 240623017}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -4763,7 +4764,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 60.000004
+    FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 10000
@@ -4791,12 +4792,34 @@ Transform:
   m_GameObject: {fileID: 240623013}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7727336, z: -0.63473046, w: 0}
-  m_LocalPosition: {x: 371, y: 0.100097656, z: 441}
+  m_LocalPosition: {x: 371, y: -99.8999, z: 441}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 587293517}
   m_LocalEulerAnglesHint: {x: 78.8, y: 180, z: 0}
+--- !u!95 &240623017
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240623013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &242081222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13954,6 +13977,7 @@ GameObject:
   - component: {fileID: 681875275}
   - component: {fileID: 681875277}
   - component: {fileID: 681875278}
+  - component: {fileID: 681875279}
   m_Layer: 0
   m_Name: SideShotCam
   m_TagString: Untagged
@@ -14058,6 +14082,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &681875279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681875274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7362d5a2f8ea3347bfcc808a1e9290e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineAutoFocus
+  FocusTarget: 0
+  CustomTarget: {fileID: 0}
+  FocusDepthOffset: 0
+  Damping: 0.2
 --- !u!1001 &682273951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24599,7 +24639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214594942}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6523561, y: 9.1380056e-11, z: -7.15523e-11, w: 0.7579127}
+  m_LocalRotation: {x: 0.6523561, y: 3.2108258e-10, z: -0.0000000038275423, w: 0.75791264}
   m_LocalPosition: {x: 8806, y: 2008.6, z: 1437.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25523,7 +25563,9 @@ PlayableDirector:
   - key: {fileID: -8334974699582993412, guid: 2e4f4d7a87e1c437c9c4404db4b5f46f, type: 2}
     value: {fileID: 681875278}
   - key: {fileID: 580549799007307598, guid: 2e4f4d7a87e1c437c9c4404db4b5f46f, type: 2}
-    value: {fileID: 1392178031}
+    value: {fileID: 240623017}
+  - key: {fileID: -948297139028346514, guid: 2e4f4d7a87e1c437c9c4404db4b5f46f, type: 2}
+    value: {fileID: 1452255671}
   m_ExposedReferences:
     m_References:
     - 8f4824b26a5304bf69c08d24c3f65f0e: {fileID: 240623015}
@@ -31829,7 +31871,7 @@ Transform:
   m_GameObject: {fileID: 1593251875}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
