@@ -4724,7 +4724,7 @@ MonoBehaviour:
   Damping:
     Enabled: 1
     Position: {x: 0, y: 0, z: 0}
-    Angular: 0
+    Angular: 3.05
   AutomaticDolly:
     Enabled: 1
     Method:
@@ -4738,7 +4738,7 @@ MonoBehaviour:
     - rid: 5039568824174903398
       type: {class: SplineAutoDolly/FixedSpeed, ns: Unity.Cinemachine, asm: Unity.Cinemachine}
       data:
-        Speed: 0.1
+        Speed: 0.13
 --- !u!114 &240623015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4791,7 +4791,7 @@ Transform:
   m_GameObject: {fileID: 240623013}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7727336, z: -0.63473046, w: 0}
-  m_LocalPosition: {x: 63, y: 0.100097656, z: 232}
+  m_LocalPosition: {x: 371, y: 0.100097656, z: 441}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6675,8 +6675,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.010654523, y: 0.00000074897156, z: -0.000000007980387, w: -0.9999433}
-  m_LocalPosition: {x: 8093.5, y: 212.25195, z: 668.3906}
+  m_LocalRotation: {x: -0.02227233, y: 0.78335035, z: 0.02827026, w: 0.6205377}
+  m_LocalPosition: {x: 5824.1797, y: 1081.731, z: 72.978516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24599,8 +24599,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214594942}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.652356, y: 2.0463854e-10, z: -1.1326594e-10, w: 0.75791276}
-  m_LocalPosition: {x: 7920.0005, y: 2008.6, z: 113.3}
+  m_LocalRotation: {x: 0.6523561, y: 9.1380056e-11, z: -7.15523e-11, w: 0.7579127}
+  m_LocalPosition: {x: 8806, y: 2008.6, z: 1437.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25522,6 +25522,8 @@ PlayableDirector:
     value: {fileID: 1392178031}
   - key: {fileID: -8334974699582993412, guid: 2e4f4d7a87e1c437c9c4404db4b5f46f, type: 2}
     value: {fileID: 681875278}
+  - key: {fileID: 580549799007307598, guid: 2e4f4d7a87e1c437c9c4404db4b5f46f, type: 2}
+    value: {fileID: 1392178031}
   m_ExposedReferences:
     m_References:
     - 8f4824b26a5304bf69c08d24c3f65f0e: {fileID: 240623015}
@@ -31727,59 +31729,59 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: 63
+        x: 371
         y: 0.100097656
-        z: 232
+        z: 441
       TangentIn:
         x: 0
         y: 0
-        z: -784.62335
+        z: -623.3064
       TangentOut:
         x: 0
         y: 0
-        z: 784.62335
+        z: 623.3064
       Rotation:
         value:
-          x: -0.000039052233
-          y: 0.95714325
-          z: -0.00001181653
-          w: 0.28961486
+          x: -0.0001248242
+          y: 0.9474836
+          z: -0.00027277408
+          w: -0.31980458
     - Position:
-        x: -2
+        x: -389
         y: 0.100097656
-        z: -1168
+        z: -1171
       TangentIn:
-        x: 183.4497
-        y: -0.00048828125
-        z: -452.29883
+        x: 0
+        y: 0
+        z: -548.1153
       TangentOut:
-        x: -140.43701
-        y: 0.00024414062
-        z: 1517.123
+        x: 0
+        y: 0
+        z: 548.1153
       Rotation:
         value:
-          x: 0.0000011806652
-          y: 0.89430374
-          z: -0.00000059074
-          w: -0.44746035
+          x: -0.000034026598
+          y: 0.9988521
+          z: 0.00072898064
+          w: 0.047895692
     - Position:
-        x: -241
-        y: 0.100097656
-        z: -3144
+        x: 263
+        y: 3.1000977
+        z: -3102
       TangentIn:
-        x: -99.89502
-        y: 0.49780273
-        z: -816.8198
+        x: 0
+        y: 0
+        z: -832.1136
       TangentOut:
-        x: 15.739746
-        y: -0.5583496
-        z: 865.24457
+        x: 0
+        y: 0
+        z: 832.1136
       Rotation:
         value:
-          x: -0.06527267
-          y: 0.9947436
-          z: -0.012568626
-          w: -0.07788939
+          x: -0.06473322
+          y: 0.9964825
+          z: -0.0033298905
+          w: 0.053115744
     - Position:
         x: -317
         y: 0.100097656
@@ -31796,14 +31798,14 @@ MonoBehaviour:
         value:
           x: -0
           y: 0
-          z: -0.000000040649823
+          z: -0.0000017216524
           w: 1
     m_MetaData:
     - Mode: 2
       Tension: 0.5
-    - Mode: 4
+    - Mode: 2
       Tension: 0.5
-    - Mode: 4
+    - Mode: 2
       Tension: 0.5
     - Mode: 2
       Tension: 0.5
