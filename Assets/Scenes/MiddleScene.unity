@@ -6675,8 +6675,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.022272334, y: 0.78335035, z: 0.02827026, w: 0.6205377}
-  m_LocalPosition: {x: 5824.1797, y: 1081.731, z: 72.978516}
+  m_LocalRotation: {x: -0.010654523, y: 0.00000074897156, z: -0.000000007980387, w: -0.9999433}
+  m_LocalPosition: {x: 8093.5, y: 212.25195, z: 668.3906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13953,6 +13953,7 @@ GameObject:
   - component: {fileID: 681875276}
   - component: {fileID: 681875275}
   - component: {fileID: 681875277}
+  - component: {fileID: 681875278}
   m_Layer: 0
   m_Name: SideShotCam
   m_TagString: Untagged
@@ -14011,13 +14012,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681875274}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.022272334, y: 0.78335035, z: 0.02827026, w: 0.6205377}
+  m_LocalRotation: {x: -0.02227233, y: 0.78335035, z: 0.02827026, w: 0.6205377}
   m_LocalPosition: {x: 5824.1797, y: 1081.731, z: 72.978516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -4.125, y: 103.23, z: 0.011}
+  m_LocalEulerAnglesHint: {x: 0.00001328658, y: 0.000004248069, z: -0.0000001514738}
 --- !u!114 &681875277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14035,6 +14036,28 @@ MonoBehaviour:
   AmplitudeGain: 1
   FrequencyGain: 1
   m_NoiseOffsets: {x: 319.15378, y: -785.55396, z: -777.2522}
+--- !u!95 &681875278
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681875274}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &682273951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24576,8 +24599,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214594942}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.657485, y: -0.049249575, z: 0.043138947, w: 0.75061774}
-  m_LocalPosition: {x: 7923.0107, y: 2008.6, z: 117.081436}
+  m_LocalRotation: {x: 0.652356, y: 2.0463854e-10, z: -1.1326594e-10, w: 0.75791276}
+  m_LocalPosition: {x: 7920.0005, y: 2008.6, z: 113.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25491,6 +25514,14 @@ PlayableDirector:
     value: {fileID: 1392178031}
   - key: {fileID: 2320558843684227249, guid: 2e4f4d7a87e1c437c9c4404db4b5f46f, type: 2}
     value: {fileID: 1452255671}
+  - key: {fileID: 0}
+    value: {fileID: 681875278}
+  - key: {fileID: 0}
+    value: {fileID: 1084328003}
+  - key: {fileID: 0}
+    value: {fileID: 1392178031}
+  - key: {fileID: -8334974699582993412, guid: 2e4f4d7a87e1c437c9c4404db4b5f46f, type: 2}
+    value: {fileID: 681875278}
   m_ExposedReferences:
     m_References:
     - 8f4824b26a5304bf69c08d24c3f65f0e: {fileID: 240623015}
