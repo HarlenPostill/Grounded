@@ -14,8 +14,8 @@ public class RockInteractiveSequence : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject topRockVisibleModel;
 
-    [Header("UI")]
-    [SerializeField] private GameObject lookInteractionCanvas;
+    [Header("Look UI")]
+    [SerializeField] private GameObject lookInteractionUI;
     [SerializeField] private RectTransform lookProgressFill;
     [SerializeField] private TextMeshProUGUI leftBracket;
     [SerializeField] private TextMeshProUGUI rightBracket;
@@ -29,8 +29,19 @@ public class RockInteractiveSequence : MonoBehaviour
     [SerializeField] private float minPitch = -55f;
     [SerializeField] private float maxPitch = 55f;
 
-    [Header("Exit Settings")]
+    [Header("Look Exit Settings")]
     [SerializeField] private float cameraReturnDuration = 0.4f;
+
+    [Header("Jump Interaction")]
+    [SerializeField] private Transform topRockPivot;
+    [SerializeField] private GameObject jumpInteractionUI;
+    [SerializeField] private TextMeshProUGUI jumpPromptText;
+    [SerializeField] private int requiredJumpPresses = 3;
+    [SerializeField] private float jumpHeight = 0.35f;
+    [SerializeField] private float jumpDuration = 0.35f;
+    [SerializeField] private float jumpSquashAmount = 0.12f;
+    [SerializeField] private float jumpTiltAmount = 5f;
+    [SerializeField] private double jumpResumeTime = -1;
 
     private bool lookInteractionActive;
     private bool isReturningCamera;
@@ -39,19 +50,30 @@ public class RockInteractiveSequence : MonoBehaviour
     private float pitch;
     private Quaternion originalCM04Rotation;
 
+    private bool jumpInteractionActive;
+    private bool jumpInProgress;
+    private int jumpPressCount;
+    private Vector3 jumpStartLocalPosition;
+    private Quaternion jumpStartLocalRotation;
+    private Vector3 jumpStartLocalScale;
+
     private void Start()
     {
         SetLookUI(false);
+        SetJumpUI(false);
     }
 
     private void Update()
     {
-        if (!lookInteractionActive || isReturningCamera)
-            return;
+        if (lookInteractionActive && !isReturningCamera)
+        {
+            HandleLookInput();
+            CheckBirdLookProgress();
+            UpdateLookUI();
+        }
 
-        HandleLookInput();
-        CheckBirdLookProgress();
-        UpdateLookUI();
+        if (jumpInteractionActive && !jumpInProgress && Input.GetKeyDown(KeyCode.Space))
+            StartCoroutine(DoRockJump());
     }
 
     public void StartLookInteraction()
@@ -82,6 +104,31 @@ public class RockInteractiveSequence : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    public void StartJumpInteraction()
+    {
+        if (jumpInteractionActive || jumpInProgress)
+            return;
+
+        Debug.Log("JUMP INTERACTION STARTED");
+
+        if (timeline != null)
+            timeline.Pause();
+
+        jumpInteractionActive = true;
+        jumpInProgress = false;
+        jumpPressCount = 0;
+
+        if (topRockPivot != null)
+        {
+            jumpStartLocalPosition = topRockPivot.localPosition;
+            jumpStartLocalRotation = topRockPivot.localRotation;
+            jumpStartLocalScale = topRockPivot.localScale;
+        }
+
+        SetJumpUI(true);
+        UpdateJumpPrompt();
     }
 
     private void HandleLookInput()
@@ -162,6 +209,79 @@ public class RockInteractiveSequence : MonoBehaviour
             timeline.Play();
     }
 
+    private IEnumerator DoRockJump()
+    {
+        if (topRockPivot == null)
+            yield break;
+
+        jumpInProgress = true;
+        jumpPressCount++;
+
+        UpdateJumpPrompt();
+
+        float elapsed = 0f;
+
+        while (elapsed < jumpDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / jumpDuration);
+
+            float jumpArc = Mathf.Sin(t * Mathf.PI);
+            float squashCurve = Mathf.Sin(t * Mathf.PI * 2f);
+            float tiltCurve = Mathf.Sin(t * Mathf.PI);
+
+            Vector3 position = jumpStartLocalPosition + Vector3.up * (jumpArc * jumpHeight);
+            Quaternion rotation = jumpStartLocalRotation * Quaternion.Euler(0f, 0f, tiltCurve * jumpTiltAmount);
+
+            float squashX = 1f + Mathf.Max(0f, -squashCurve) * jumpSquashAmount;
+            float squashY = 1f + Mathf.Max(0f, squashCurve) * jumpSquashAmount;
+
+            topRockPivot.localPosition = position;
+            topRockPivot.localRotation = rotation;
+            topRockPivot.localScale = new Vector3(
+                jumpStartLocalScale.x * squashX,
+                jumpStartLocalScale.y * squashY,
+                jumpStartLocalScale.z * squashX
+            );
+
+            yield return null;
+        }
+
+        topRockPivot.localPosition = jumpStartLocalPosition;
+        topRockPivot.localRotation = jumpStartLocalRotation;
+        topRockPivot.localScale = jumpStartLocalScale;
+
+        jumpInProgress = false;
+
+        if (jumpPressCount >= requiredJumpPresses)
+            EndJumpInteraction();
+    }
+
+    private void EndJumpInteraction()
+    {
+        Debug.Log("JUMP INTERACTION ENDED");
+
+        jumpInteractionActive = false;
+        jumpInProgress = false;
+
+        if (topRockPivot != null)
+        {
+            topRockPivot.localPosition = jumpStartLocalPosition;
+            topRockPivot.localRotation = jumpStartLocalRotation;
+            topRockPivot.localScale = jumpStartLocalScale;
+        }
+
+        SetJumpUI(false);
+
+        if (timeline != null)
+        {
+            if (jumpResumeTime >= 0)
+                timeline.time = jumpResumeTime;
+
+            timeline.Play();
+        }
+    }
+
     private void UpdateLookUI()
     {
         if (lookProgressFill == null)
@@ -173,8 +293,8 @@ public class RockInteractiveSequence : MonoBehaviour
 
     private void SetLookUI(bool active)
     {
-        if (lookInteractionCanvas != null)
-            lookInteractionCanvas.SetActive(active);
+        if (lookInteractionUI != null)
+            lookInteractionUI.SetActive(active);
 
         if (lookProgressFill != null)
             lookProgressFill.localScale = new Vector3(0f, 1f, 1f);
@@ -191,6 +311,23 @@ public class RockInteractiveSequence : MonoBehaviour
 
         if (rightBracket != null)
             rightBracket.color = colour;
+    }
+
+    private void SetJumpUI(bool active)
+    {
+        if (jumpInteractionUI != null)
+            jumpInteractionUI.SetActive(active);
+
+        if (jumpPromptText != null)
+            jumpPromptText.gameObject.SetActive(active);
+    }
+
+    private void UpdateJumpPrompt()
+    {
+        if (jumpPromptText == null)
+            return;
+
+        jumpPromptText.text = $"PRESS SPACE TO JUMP [{jumpPressCount}/{requiredJumpPresses}]";
     }
 
     private float NormalizeAngle(float angle)
